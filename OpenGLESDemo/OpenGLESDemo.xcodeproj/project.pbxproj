@@ -20,6 +20,14 @@
 		8E4B336A21F16FA3009A2005 /* for_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B336921F16FA3009A2005 /* for_test.jpg */; };
 		8E83174D21F85FAB00636F11 /* WztTest1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E83174B21F85FAB00636F11 /* WztTest1VC.m */; };
 		8E83174E21F85FAB00636F11 /* WztTest1VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E83174C21F85FAB00636F11 /* WztTest1VC.xib */; };
+		8E8C969322004F45001C4943 /* WztTest6VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C969122004F45001C4943 /* WztTest6VC.m */; };
+		8E8C969422004F45001C4943 /* WztTest6VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C969222004F45001C4943 /* WztTest6VC.xib */; };
+		8E8C9696220058D7001C4943 /* VertexShader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C9695220058C9001C4943 /* VertexShader.vsh */; };
+		8E8C969822005904001C4943 /* FragmentShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C9697220058F5001C4943 /* FragmentShader.fsh */; };
+		8E8C969B22006107001C4943 /* OpenGLESView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C969A22006107001C4943 /* OpenGLESView.m */; };
+		8E8C969E2200806F001C4943 /* LearnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C969D2200806E001C4943 /* LearnView.m */; };
+		8E8C96A1220080F5001C4943 /* shaderf.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C969F220080F5001C4943 /* shaderf.fsh */; };
+		8E8C96A2220080F5001C4943 /* shaderv.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8E8C96A0220080F5001C4943 /* shaderv.vsh */; };
 		8EA549D921F86DC6004FC286 /* WztTest2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA549D621F86DC6004FC286 /* WztTest2VC.m */; };
 		8EA549DA21F86DC6004FC286 /* WztTest2VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EA549D721F86DC6004FC286 /* WztTest2VC.xib */; };
 		8EA549DE21F8759A004FC286 /* WztTest3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EA549DC21F8759A004FC286 /* WztTest3VC.m */; };
@@ -28,6 +36,8 @@
 		8EA549E421F87670004FC286 /* shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = 8EA549E321F87670004FC286 /* shader.fsh */; };
 		8EA549E721F87B0F004FC286 /* shader1.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8EA549E521F87B0F004FC286 /* shader1.fsh */; };
 		8EA549E821F87B0F004FC286 /* shader1.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8EA549E621F87B0F004FC286 /* shader1.vsh */; };
+		8EC19C1921FEF2B30018252D /* WztTest5VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC19C1721FEF2B30018252D /* WztTest5VC.m */; };
+		8EC19C1A21FEF2B30018252D /* WztTest5VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EC19C1821FEF2B30018252D /* WztTest5VC.xib */; };
 		8ED823F421F9BF7F007B3BD4 /* WztTest4VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8ED823F221F9BF7F007B3BD4 /* WztTest4VC.m */; };
 		8ED823F521F9BF7F007B3BD4 /* WztTest4VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F321F9BF7F007B3BD4 /* WztTest4VC.xib */; };
 		8ED823F821F9BFB8007B3BD4 /* shader4.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F621F9BFB8007B3BD4 /* shader4.vsh */; };
@@ -74,6 +84,17 @@
 		8E83174A21F85FAB00636F11 /* WztTest1VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest1VC.h; sourceTree = "<group>"; };
 		8E83174B21F85FAB00636F11 /* WztTest1VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest1VC.m; sourceTree = "<group>"; };
 		8E83174C21F85FAB00636F11 /* WztTest1VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WztTest1VC.xib; sourceTree = "<group>"; };
+		8E8C969022004F45001C4943 /* WztTest6VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest6VC.h; sourceTree = "<group>"; };
+		8E8C969122004F45001C4943 /* WztTest6VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest6VC.m; sourceTree = "<group>"; };
+		8E8C969222004F45001C4943 /* WztTest6VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WztTest6VC.xib; sourceTree = "<group>"; };
+		8E8C9695220058C9001C4943 /* VertexShader.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = VertexShader.vsh; sourceTree = "<group>"; };
+		8E8C9697220058F5001C4943 /* FragmentShader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = FragmentShader.fsh; sourceTree = "<group>"; };
+		8E8C969922006107001C4943 /* OpenGLESView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenGLESView.h; sourceTree = "<group>"; };
+		8E8C969A22006107001C4943 /* OpenGLESView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenGLESView.m; sourceTree = "<group>"; };
+		8E8C969C2200806E001C4943 /* LearnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnView.h; sourceTree = "<group>"; };
+		8E8C969D2200806E001C4943 /* LearnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LearnView.m; sourceTree = "<group>"; };
+		8E8C969F220080F5001C4943 /* shaderf.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderf.fsh; sourceTree = "<group>"; };
+		8E8C96A0220080F5001C4943 /* shaderv.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shaderv.vsh; sourceTree = "<group>"; };
 		8EA549D621F86DC6004FC286 /* WztTest2VC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WztTest2VC.m; sourceTree = "<group>"; };
 		8EA549D721F86DC6004FC286 /* WztTest2VC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WztTest2VC.xib; sourceTree = "<group>"; };
 		8EA549D821F86DC6004FC286 /* WztTest2VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WztTest2VC.h; sourceTree = "<group>"; };
@@ -84,6 +105,9 @@
 		8EA549E321F87670004FC286 /* shader.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.fsh; sourceTree = "<group>"; };
 		8EA549E521F87B0F004FC286 /* shader1.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader1.fsh; sourceTree = "<group>"; };
 		8EA549E621F87B0F004FC286 /* shader1.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader1.vsh; sourceTree = "<group>"; };
+		8EC19C1621FEF2B30018252D /* WztTest5VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest5VC.h; sourceTree = "<group>"; };
+		8EC19C1721FEF2B30018252D /* WztTest5VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest5VC.m; sourceTree = "<group>"; };
+		8EC19C1821FEF2B30018252D /* WztTest5VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WztTest5VC.xib; sourceTree = "<group>"; };
 		8ED823F121F9BF7F007B3BD4 /* WztTest4VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest4VC.h; sourceTree = "<group>"; };
 		8ED823F221F9BF7F007B3BD4 /* WztTest4VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest4VC.m; sourceTree = "<group>"; };
 		8ED823F321F9BF7F007B3BD4 /* WztTest4VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WztTest4VC.xib; sourceTree = "<group>"; };
@@ -142,6 +166,8 @@
 		8E38BB4921F0A58400F5A01F /* OpenGLESDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8E8C968F22004F25001C4943 /* Test6 */,
+				8EC19C1221FEF1E80018252D /* Test5 */,
 				8ED823F021F9BF62007B3BD4 /* Test4 */,
 				8EA549E021F875A0004FC286 /* Test3 */,
 				8E83175921F8697900636F11 /* Test2 */,
@@ -209,6 +235,24 @@
 			path = Test2;
 			sourceTree = "<group>";
 		};
+		8E8C968F22004F25001C4943 /* Test6 */ = {
+			isa = PBXGroup;
+			children = (
+				8E8C969022004F45001C4943 /* WztTest6VC.h */,
+				8E8C969122004F45001C4943 /* WztTest6VC.m */,
+				8E8C969222004F45001C4943 /* WztTest6VC.xib */,
+				8E8C969C2200806E001C4943 /* LearnView.h */,
+				8E8C969D2200806E001C4943 /* LearnView.m */,
+				8E8C969F220080F5001C4943 /* shaderf.fsh */,
+				8E8C96A0220080F5001C4943 /* shaderv.vsh */,
+				8E8C969922006107001C4943 /* OpenGLESView.h */,
+				8E8C969A22006107001C4943 /* OpenGLESView.m */,
+				8E8C9695220058C9001C4943 /* VertexShader.vsh */,
+				8E8C9697220058F5001C4943 /* FragmentShader.fsh */,
+			);
+			path = Test6;
+			sourceTree = "<group>";
+		};
 		8EA549E021F875A0004FC286 /* Test3 */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +263,16 @@
 				8EA549E321F87670004FC286 /* shader.fsh */,
 			);
 			path = Test3;
+			sourceTree = "<group>";
+		};
+		8EC19C1221FEF1E80018252D /* Test5 */ = {
+			isa = PBXGroup;
+			children = (
+				8EC19C1621FEF2B30018252D /* WztTest5VC.h */,
+				8EC19C1721FEF2B30018252D /* WztTest5VC.m */,
+				8EC19C1821FEF2B30018252D /* WztTest5VC.xib */,
+			);
+			path = Test5;
 			sourceTree = "<group>";
 		};
 		8ED823F021F9BF62007B3BD4 /* Test4 */ = {
@@ -337,14 +391,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E38BB5721F0A58500F5A01F /* LaunchScreen.storyboard in Resources */,
+				8E8C96A1220080F5001C4943 /* shaderf.fsh in Resources */,
 				8ED823F521F9BF7F007B3BD4 /* WztTest4VC.xib in Resources */,
+				8E8C96A2220080F5001C4943 /* shaderv.vsh in Resources */,
 				8E83174E21F85FAB00636F11 /* WztTest1VC.xib in Resources */,
 				8EA549E721F87B0F004FC286 /* shader1.fsh in Resources */,
 				8ED823F821F9BFB8007B3BD4 /* shader4.vsh in Resources */,
+				8E8C969422004F45001C4943 /* WztTest6VC.xib in Resources */,
 				8EA549E821F87B0F004FC286 /* shader1.vsh in Resources */,
 				8E4B336A21F16FA3009A2005 /* for_test.jpg in Resources */,
 				8EA549DA21F86DC6004FC286 /* WztTest2VC.xib in Resources */,
 				8E38BB5421F0A58500F5A01F /* Assets.xcassets in Resources */,
+				8EC19C1A21FEF2B30018252D /* WztTest5VC.xib in Resources */,
+				8E8C9696220058D7001C4943 /* VertexShader.vsh in Resources */,
+				8E8C969822005904001C4943 /* FragmentShader.fsh in Resources */,
 				8ED823F921F9BFB8007B3BD4 /* shader4.fsh in Resources */,
 				8E38BB5221F0A58400F5A01F /* Main.storyboard in Resources */,
 				8EA549DF21F8759A004FC286 /* WztTest3VC.xib in Resources */,
@@ -380,6 +440,10 @@
 				8ED823F421F9BF7F007B3BD4 /* WztTest4VC.m in Sources */,
 				8E83174D21F85FAB00636F11 /* WztTest1VC.m in Sources */,
 				8E38BB4C21F0A58400F5A01F /* AppDelegate.m in Sources */,
+				8E8C969322004F45001C4943 /* WztTest6VC.m in Sources */,
+				8E8C969B22006107001C4943 /* OpenGLESView.m in Sources */,
+				8EC19C1921FEF2B30018252D /* WztTest5VC.m in Sources */,
+				8E8C969E2200806F001C4943 /* LearnView.m in Sources */,
 				8EA549D921F86DC6004FC286 /* WztTest2VC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
