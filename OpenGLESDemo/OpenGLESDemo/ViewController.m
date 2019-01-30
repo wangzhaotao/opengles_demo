@@ -13,6 +13,7 @@
 #import "WztTest4VC.h"
 #import "WztTest5VC.h"
 #import "WztTest6VC.h"
+#import "WztTest7VC.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -105,6 +106,9 @@
     [_dataArray addObject:dic];
     
     dic = @{@"name":@"test6", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest6VC class])};
+    [_dataArray addObject:dic];
+    
+    dic = @{@"name":@"test7", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest7VC class])};
     [_dataArray addObject:dic];
 }
 
