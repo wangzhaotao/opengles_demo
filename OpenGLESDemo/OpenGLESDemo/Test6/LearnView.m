@@ -34,7 +34,7 @@
     
     [self setupLayer];
     
-    //[self destoryRenderAndFrameBuffer];
+    [self destoryRenderAndFrameBuffer];
     
     [self setupRenderBuffer];
     
@@ -235,40 +235,45 @@
 
 
 - (GLuint)setupTexture:(NSString *)fileName {
-    // 1获取图片的CGImageRef
+    //1 获取图片的CGImageRef
     CGImageRef spriteImage = [UIImage imageNamed:fileName].CGImage;
     if (!spriteImage) {
         NSLog(@"Failed to load image %@", fileName);
         exit(1);
     }
     
-    // 2 读取图片的大小
+    //2 读取图片的大小
     size_t width = CGImageGetWidth(spriteImage);
     size_t height = CGImageGetHeight(spriteImage);
     
     GLubyte * spriteData = (GLubyte *) calloc(width * height * 4, sizeof(GLubyte)); //rgba共4个byte
-    
     CGContextRef spriteContext = CGBitmapContextCreate(spriteData, width, height, 8, width*4,
                                                        CGImageGetColorSpace(spriteImage), kCGImageAlphaPremultipliedLast);
     
-    // 3在CGContextRef上绘图
+    //3 在CGContextRef上绘图
     CGContextDrawImage(spriteContext, CGRectMake(0, 0, width, height), spriteImage);
     
     CGContextRelease(spriteContext);
     
-    // 4绑定纹理到默认的纹理ID（这里只有一张图片，故而相当于默认于片元着色器里面的colorMap，如果有多张图不可以这么做）
-    glBindTexture(GL_TEXTURE_2D, 0);
     
+    //4 绑定纹理到默认的纹理ID（这里只有一张图片，故而相当于默认于片元着色器里面的colorMap，如果有多张图不可以这么做）
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
     
+    //为当前绑定的纹理对象设置 环绕、过滤 方式
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     
+    //生成纹理
     float fw = width, fh = height;
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, fw, fh, 0, GL_RGBA, GL_UNSIGNED_BYTE, spriteData);
     
-    glBindTexture(GL_TEXTURE_2D, 0);
+    
+    
+    //glBindTexture(GL_TEXTURE_2D, texture);
     
     free(spriteData);
     return 0;
