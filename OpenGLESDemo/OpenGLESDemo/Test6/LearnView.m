@@ -74,7 +74,6 @@
         glUseProgram(self.myProgram); //成功便使用，避免由于未使用导致的的bug
     }
     
-    
 
     //前三个是顶点坐标， 后面两个是纹理坐标
     GLfloat attrArr[] =
@@ -100,16 +99,17 @@
     glVertexAttribPointer(textCoor, 2, GL_FLOAT, GL_FALSE, sizeof(GLfloat) * 5, (float *)NULL + 3);
     glEnableVertexAttribArray(textCoor);
     
+    
     //加载纹理
     [self setupTexture:@"for_test.jpg"];
     
+    
     //获取shader里面的变量，这里记得要在glLinkProgram后面，后面，后面！
     GLuint rotate = glGetUniformLocation(self.myProgram, "rotateMatrix");
-    
+
     float radians = 10 * 3.14159f / 180.0f;
     float s = sin(radians);
     float c = cos(radians);
-    
     //z轴旋转矩阵
     GLfloat zRotation[16] =
     { //
@@ -118,12 +118,11 @@
         0, 0, 1.0, 0,//
         0.0, 0, 0, 1.0//
     };
-    
+
     //设置旋转矩阵
     glUniformMatrix4fv(rotate, 1, GL_FALSE, (GLfloat *)&zRotation[0]);
-    
     glDrawArrays(GL_TRIANGLES, 0, 6);
-    
+
     [self.myContext presentRenderbuffer:GL_RENDERBUFFER];
 }
 

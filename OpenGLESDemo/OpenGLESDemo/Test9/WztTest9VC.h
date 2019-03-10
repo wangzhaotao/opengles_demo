@@ -1,5 +1,5 @@
 //
-//  WztTest7VC.h
+//  WztTest9VC.h
 //  OpenGLESDemo
 //
 //  Created by ocean on 2019/1/30.
@@ -8,6 +8,8 @@
 
 #import <GLKit/GLKit.h>
 
-@interface WztTest7VC : GLKViewController
+
+@interface WztTest9VC : GLKViewController
 
 @end
+

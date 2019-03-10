@@ -14,6 +14,8 @@
 #import "WztTest5VC.h"
 #import "WztTest6VC.h"
 #import "WztTest7VC.h"
+#import "WztTest8VC.h"
+#import "WztTest9VC.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -108,8 +110,14 @@
     dic = @{@"name":@"test6", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest6VC class])};
     [_dataArray addObject:dic];
     
-    //
     dic = @{@"name":@"test7", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest7VC class])};
+    [_dataArray addObject:dic];
+    
+    dic = @{@"name":@"test8", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest8VC class])};
+    [_dataArray addObject:dic];
+
+    //
+    dic = @{@"name":@"test9", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest9VC class])};
     [_dataArray addObject:dic];
 }
 
