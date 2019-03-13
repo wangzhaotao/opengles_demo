@@ -47,8 +47,8 @@
     
     const char vShaderStr[] =
     "#version 300 es                            \n"
-    "layout(location = 0) in vec4 a_position;   \n"
-    "layout(location = 1) in vec4 a_color;      \n"
+    "layout(location = 1) in vec4 a_position;   \n"
+    "layout(location = 0) in vec4 a_color;      \n"
     "out vec4 v_color;                          \n"
     "void main()                                \n"
     "{                                          \n"
@@ -99,9 +99,11 @@
     
     glUseProgram (programObject);
     
-    glVertexAttribPointer ( 0, 3, GL_FLOAT, GL_FALSE, 0, vertexPos );
-    glEnableVertexAttribArray ( 0 );
-    glVertexAttrib4fv ( 1, color );
+    
+    glVertexAttrib4fv ( 0, color );
+    
+    glVertexAttribPointer ( 1, 3, GL_FLOAT, GL_FALSE, 0, vertexPos );
+    glEnableVertexAttribArray ( 1 );
     
     
     glDrawArrays ( GL_TRIANGLES, 0, 3 );

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B82BE042234DBAF0039B1EF /* WztTest10VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82BE032234DBAF0039B1EF /* WztTest10VC.m */; };
+		7B82BE072234DBD50039B1EF /* WztGLKBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82BE062234DBD50039B1EF /* WztGLKBaseVC.m */; };
+		7B82BE0A2234E7510039B1EF /* WztTest11VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82BE092234E7510039B1EF /* WztTest11VC.m */; };
 		7BADCBBD2233ABA2009A0DFC /* WztTest9VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BADCBBC2233ABA2009A0DFC /* WztTest9VC.m */; };
 		7BADCBCA2233B5FB009A0DFC /* esShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BADCBC92233B5FB009A0DFC /* esShader.m */; };
 		8E38BB4C21F0A58400F5A01F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E38BB4B21F0A58400F5A01F /* AppDelegate.m */; };
@@ -73,6 +76,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B82BE022234DBAF0039B1EF /* WztTest10VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest10VC.h; sourceTree = "<group>"; };
+		7B82BE032234DBAF0039B1EF /* WztTest10VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest10VC.m; sourceTree = "<group>"; };
+		7B82BE052234DBD50039B1EF /* WztGLKBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztGLKBaseVC.h; sourceTree = "<group>"; };
+		7B82BE062234DBD50039B1EF /* WztGLKBaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztGLKBaseVC.m; sourceTree = "<group>"; };
+		7B82BE082234E7510039B1EF /* WztTest11VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest11VC.h; sourceTree = "<group>"; };
+		7B82BE092234E7510039B1EF /* WztTest11VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest11VC.m; sourceTree = "<group>"; };
 		7BADCBBB2233ABA2009A0DFC /* WztTest9VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest9VC.h; sourceTree = "<group>"; };
 		7BADCBBC2233ABA2009A0DFC /* WztTest9VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest9VC.m; sourceTree = "<group>"; };
 		7BADCBC82233B5FB009A0DFC /* esShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = esShader.h; sourceTree = "<group>"; };
@@ -169,6 +178,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B82BE012234DB850039B1EF /* Test10 */ = {
+			isa = PBXGroup;
+			children = (
+				7B82BE052234DBD50039B1EF /* WztGLKBaseVC.h */,
+				7B82BE062234DBD50039B1EF /* WztGLKBaseVC.m */,
+				7B82BE022234DBAF0039B1EF /* WztTest10VC.h */,
+				7B82BE032234DBAF0039B1EF /* WztTest10VC.m */,
+				7B82BE082234E7510039B1EF /* WztTest11VC.h */,
+				7B82BE092234E7510039B1EF /* WztTest11VC.m */,
+			);
+			path = Test10;
+			sourceTree = "<group>";
+		};
 		7BADCBBA2233AB77009A0DFC /* Test9 */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +233,7 @@
 		8E38BB4921F0A58400F5A01F /* OpenGLESDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7B82BE012234DB850039B1EF /* Test10 */,
 				7BADCBBE2233AC90009A0DFC /* Utils */,
 				7BADCBBA2233AB77009A0DFC /* Test9 */,
 				8EBAFDDC22029A92008C8BD3 /* Test8 */,
@@ -513,10 +536,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B82BE072234DBD50039B1EF /* WztGLKBaseVC.m in Sources */,
 				8EA549E421F87670004FC286 /* shader.fsh in Sources */,
 				8EBAFDE822029C92008C8BD3 /* WztTest8View.m in Sources */,
 				8E38BB4F21F0A58400F5A01F /* ViewController.m in Sources */,
 				7BADCBBD2233ABA2009A0DFC /* WztTest9VC.m in Sources */,
+				7B82BE042234DBAF0039B1EF /* WztTest10VC.m in Sources */,
 				8EA429342201ACF40063E3B1 /* WztTest7VC.m in Sources */,
 				8EA549E221F8762D004FC286 /* shader.vsh in Sources */,
 				8E38BB5A21F0A58500F5A01F /* main.m in Sources */,
@@ -529,6 +554,7 @@
 				8E8C969322004F45001C4943 /* WztTest6VC.m in Sources */,
 				8E8C969B22006107001C4943 /* OpenGLESView.m in Sources */,
 				8EC19C1921FEF2B30018252D /* WztTest5VC.m in Sources */,
+				7B82BE0A2234E7510039B1EF /* WztTest11VC.m in Sources */,
 				8E8C969E2200806F001C4943 /* LearnView.m in Sources */,
 				8EA549D921F86DC6004FC286 /* WztTest2VC.m in Sources */,
 			);
