@@ -7,17 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "WztTest1VC.h"
-#import "WztTest2VC.h"
-#import "WztTest3VC.h"
-#import "WztTest4VC.h"
-#import "WztTest5VC.h"
-#import "WztTest6VC.h"
-#import "WztTest7VC.h"
-#import "WztTest8VC.h"
-#import "WztTest9VC.h"
-#import "WztTest10VC.h"
-#import "WztTest11VC.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
@@ -94,38 +83,41 @@
     
     _dataArray = [NSMutableArray array];
     
-    NSDictionary *dic = @{@"name":@"test1", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest1VC class])};
+    NSDictionary *dic = @{@"name":@"test1", @"action":@"clickCellAction:", @"vc":@"WztTest1VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test2", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest2VC class])};
+    dic = @{@"name":@"test2", @"action":@"clickCellAction:", @"vc":@"WztTest2VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test3", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest3VC class])};
+    dic = @{@"name":@"test3", @"action":@"clickCellAction:", @"vc":@"WztTest3VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test4", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest4VC class])};
+    dic = @{@"name":@"test4", @"action":@"clickCellAction:", @"vc":@"WztTest4VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test5", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest5VC class])};
+    dic = @{@"name":@"test5", @"action":@"clickCellAction:", @"vc":@"WztTest5VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test6", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest6VC class])};
+    dic = @{@"name":@"test6", @"action":@"clickCellAction:", @"vc":@"WztTest6VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test7", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest7VC class])};
+    dic = @{@"name":@"test7", @"action":@"clickCellAction:", @"vc":@"WztTest7VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test8", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest8VC class])};
+    dic = @{@"name":@"test8", @"action":@"clickCellAction:", @"vc":@"WztTest8VC"};
     [_dataArray addObject:dic];
 
     //
-    dic = @{@"name":@"test9", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest9VC class])};
+    dic = @{@"name":@"test9", @"action":@"clickCellAction:", @"vc":@"WztTest9VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test10", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest10VC class])};
+    dic = @{@"name":@"test10", @"action":@"clickCellAction:", @"vc":@"WztTest10VC"};
     [_dataArray addObject:dic];
     
-    dic = @{@"name":@"test11", @"action":@"clickCellAction:", @"vc":NSStringFromClass([WztTest11VC class])};
+    dic = @{@"name":@"test11", @"action":@"clickCellAction:", @"vc":@"WztTest11VC"};
+    [_dataArray addObject:dic];
+    
+    dic = @{@"name":@"test12", @"action":@"clickCellAction:", @"vc":@"WztTest12VC"};
     [_dataArray addObject:dic];
 }
 
