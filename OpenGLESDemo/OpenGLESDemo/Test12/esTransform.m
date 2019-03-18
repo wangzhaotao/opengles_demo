@@ -18,13 +18,13 @@ void esTranslate( ESMatrix *result, GLfloat tx, GLfloat ty, GLfloat tz );
 void esRotate ( ESMatrix *result, GLfloat angle, GLfloat x, GLfloat y, GLfloat z );
 void esFrustum ( ESMatrix *result, float left, float right, float bottom, float top, float nearZ, float farZ );
 void esPerspective ( ESMatrix *result, float fovy, float aspect, float nearZ, float farZ );
-void esOrtho ( ESMatrix *result, float left, float right, float bottom, float top, float nearZ, float farZ );
+//void esOrtho ( ESMatrix *result, float left, float right, float bottom, float top, float nearZ, float farZ );
 void esMatrixMultiply ( ESMatrix *result, ESMatrix *srcA, ESMatrix *srcB );
 void esMatrixLoadIdentity ( ESMatrix *result );
-void esMatrixLookAt ( ESMatrix *result,
-                     float posX,    float posY,    float posZ,
-                     float lookAtX, float lookAtY, float lookAtZ,
-                     float upX,     float upY,     float upZ );
+//void esMatrixLookAt ( ESMatrix *result,
+//                     float posX,    float posY,    float posZ,
+//                     float lookAtX, float lookAtY, float lookAtZ,
+//                     float upX,     float upY,     float upZ );
 
 
 
@@ -109,7 +109,7 @@ void esRotate ( ESMatrix *result, GLfloat angle, GLfloat x, GLfloat y, GLfloat z
 
 void esFrustum ( ESMatrix *result, float left, float right, float bottom, float top, float nearZ, float farZ )
 {
-    float       deltaX = right - left;
+    float       deltaX = right - left; //
     float       deltaY = top - bottom;
     float       deltaZ = farZ - nearZ;
     ESMatrix    frust;
@@ -142,42 +142,42 @@ void esPerspective ( ESMatrix *result, float fovy, float aspect, float nearZ, fl
 {
     GLfloat frustumW, frustumH;
     
-    frustumH = tanf ( fovy / 360.0f * PI ) * nearZ;
-    frustumW = frustumH * aspect;
+    frustumH = tanf ( fovy / 360.0f * PI ) * nearZ; //tanf()正弦函数；
+    frustumW = frustumH * aspect;                   //aspect: 宽高比
     
     esFrustum ( result, -frustumW, frustumW, -frustumH, frustumH, nearZ, farZ );
 }
 
-void esOrtho ( ESMatrix *result, float left, float right, float bottom, float top, float nearZ, float farZ )
-{
-    float       deltaX = right - left;
-    float       deltaY = top - bottom;
-    float       deltaZ = farZ - nearZ;
-    ESMatrix    ortho;
-    
-    if ( ( deltaX == 0.0f ) || ( deltaY == 0.0f ) || ( deltaZ == 0.0f ) )
-    {
-        return;
-    }
-    
-    esMatrixLoadIdentity ( &ortho );
-    ortho.m[0][0] = 2.0f / deltaX;
-    ortho.m[3][0] = - ( right + left ) / deltaX;
-    ortho.m[1][1] = 2.0f / deltaY;
-    ortho.m[3][1] = - ( top + bottom ) / deltaY;
-    ortho.m[2][2] = -2.0f / deltaZ;
-    ortho.m[3][2] = - ( nearZ + farZ ) / deltaZ;
-    
-    esMatrixMultiply ( result, &ortho, result );
-}
+//void esOrtho ( ESMatrix *result, float left, float right, float bottom, float top, float nearZ, float farZ )
+//{
+//    float       deltaX = right - left;
+//    float       deltaY = top - bottom;
+//    float       deltaZ = farZ - nearZ;
+//    ESMatrix    ortho;
+//
+//    if ( ( deltaX == 0.0f ) || ( deltaY == 0.0f ) || ( deltaZ == 0.0f ) )
+//    {
+//        return;
+//    }
+//
+//    esMatrixLoadIdentity ( &ortho );
+//    ortho.m[0][0] = 2.0f / deltaX;
+//    ortho.m[3][0] = - ( right + left ) / deltaX;
+//    ortho.m[1][1] = 2.0f / deltaY;
+//    ortho.m[3][1] = - ( top + bottom ) / deltaY;
+//    ortho.m[2][2] = -2.0f / deltaZ;
+//    ortho.m[3][2] = - ( nearZ + farZ ) / deltaZ;
+//
+//    esMatrixMultiply ( result, &ortho, result );
+//}
 
-
+//矩阵乘法
 void esMatrixMultiply ( ESMatrix *result, ESMatrix *srcA, ESMatrix *srcB )
 {
     ESMatrix    tmp;
     int         i;
     
-    for ( i = 0; i < 4; i++ )
+    for ( i = 0; i < 4; i++ ) //A4x4 * B4x4 = C4x4
     {
         tmp.m[i][0] =  ( srcA->m[i][0] * srcB->m[0][0] ) +
         ( srcA->m[i][1] * srcB->m[1][0] ) +
@@ -213,79 +213,79 @@ void esMatrixLoadIdentity ( ESMatrix *result )
     result->m[3][3] = 1.0f;
 }
 
-void esMatrixLookAt ( ESMatrix *result,
-                float posX,    float posY,    float posZ,
-                float lookAtX, float lookAtY, float lookAtZ,
-                float upX,     float upY,     float upZ )
-{
-    float axisX[3], axisY[3], axisZ[3];
-    float length;
-    
-    // axisZ = lookAt - pos
-    axisZ[0] = lookAtX - posX;
-    axisZ[1] = lookAtY - posY;
-    axisZ[2] = lookAtZ - posZ;
-    
-    // normalize axisZ
-    length = sqrtf ( axisZ[0] * axisZ[0] + axisZ[1] * axisZ[1] + axisZ[2] * axisZ[2] );
-    
-    if ( length != 0.0f )
-    {
-        axisZ[0] /= length;
-        axisZ[1] /= length;
-        axisZ[2] /= length;
-    }
-    
-    // axisX = up X axisZ
-    axisX[0] = upY * axisZ[2] - upZ * axisZ[1];
-    axisX[1] = upZ * axisZ[0] - upX * axisZ[2];
-    axisX[2] = upX * axisZ[1] - upY * axisZ[0];
-    
-    // normalize axisX
-    length = sqrtf ( axisX[0] * axisX[0] + axisX[1] * axisX[1] + axisX[2] * axisX[2] );
-    
-    if ( length != 0.0f )
-    {
-        axisX[0] /= length;
-        axisX[1] /= length;
-        axisX[2] /= length;
-    }
-    
-    // axisY = axisZ x axisX
-    axisY[0] = axisZ[1] * axisX[2] - axisZ[2] * axisX[1];
-    axisY[1] = axisZ[2] * axisX[0] - axisZ[0] * axisX[2];
-    axisY[2] = axisZ[0] * axisX[1] - axisZ[1] * axisX[0];
-    
-    // normalize axisY
-    length = sqrtf ( axisY[0] * axisY[0] + axisY[1] * axisY[1] + axisY[2] * axisY[2] );
-    
-    if ( length != 0.0f )
-    {
-        axisY[0] /= length;
-        axisY[1] /= length;
-        axisY[2] /= length;
-    }
-    
-    memset ( result, 0x0, sizeof ( ESMatrix ) );
-    
-    result->m[0][0] = -axisX[0];
-    result->m[0][1] =  axisY[0];
-    result->m[0][2] = -axisZ[0];
-    
-    result->m[1][0] = -axisX[1];
-    result->m[1][1] =  axisY[1];
-    result->m[1][2] = -axisZ[1];
-    
-    result->m[2][0] = -axisX[2];
-    result->m[2][1] =  axisY[2];
-    result->m[2][2] = -axisZ[2];
-    
-    // translate (-posX, -posY, -posZ)
-    result->m[3][0] =  axisX[0] * posX + axisX[1] * posY + axisX[2] * posZ;
-    result->m[3][1] = -axisY[0] * posX - axisY[1] * posY - axisY[2] * posZ;
-    result->m[3][2] =  axisZ[0] * posX + axisZ[1] * posY + axisZ[2] * posZ;
-    result->m[3][3] = 1.0f;
-}
+//void esMatrixLookAt ( ESMatrix *result,
+//                float posX,    float posY,    float posZ,
+//                float lookAtX, float lookAtY, float lookAtZ,
+//                float upX,     float upY,     float upZ )
+//{
+//    float axisX[3], axisY[3], axisZ[3];
+//    float length;
+//
+//    // axisZ = lookAt - pos
+//    axisZ[0] = lookAtX - posX;
+//    axisZ[1] = lookAtY - posY;
+//    axisZ[2] = lookAtZ - posZ;
+//
+//    // normalize axisZ
+//    length = sqrtf ( axisZ[0] * axisZ[0] + axisZ[1] * axisZ[1] + axisZ[2] * axisZ[2] );
+//
+//    if ( length != 0.0f )
+//    {
+//        axisZ[0] /= length;
+//        axisZ[1] /= length;
+//        axisZ[2] /= length;
+//    }
+//
+//    // axisX = up X axisZ
+//    axisX[0] = upY * axisZ[2] - upZ * axisZ[1];
+//    axisX[1] = upZ * axisZ[0] - upX * axisZ[2];
+//    axisX[2] = upX * axisZ[1] - upY * axisZ[0];
+//
+//    // normalize axisX
+//    length = sqrtf ( axisX[0] * axisX[0] + axisX[1] * axisX[1] + axisX[2] * axisX[2] );
+//
+//    if ( length != 0.0f )
+//    {
+//        axisX[0] /= length;
+//        axisX[1] /= length;
+//        axisX[2] /= length;
+//    }
+//
+//    // axisY = axisZ x axisX
+//    axisY[0] = axisZ[1] * axisX[2] - axisZ[2] * axisX[1];
+//    axisY[1] = axisZ[2] * axisX[0] - axisZ[0] * axisX[2];
+//    axisY[2] = axisZ[0] * axisX[1] - axisZ[1] * axisX[0];
+//
+//    // normalize axisY
+//    length = sqrtf ( axisY[0] * axisY[0] + axisY[1] * axisY[1] + axisY[2] * axisY[2] );
+//
+//    if ( length != 0.0f )
+//    {
+//        axisY[0] /= length;
+//        axisY[1] /= length;
+//        axisY[2] /= length;
+//    }
+//
+//    memset ( result, 0x0, sizeof ( ESMatrix ) );
+//
+//    result->m[0][0] = -axisX[0];
+//    result->m[0][1] =  axisY[0];
+//    result->m[0][2] = -axisZ[0];
+//
+//    result->m[1][0] = -axisX[1];
+//    result->m[1][1] =  axisY[1];
+//    result->m[1][2] = -axisZ[1];
+//
+//    result->m[2][0] = -axisX[2];
+//    result->m[2][1] =  axisY[2];
+//    result->m[2][2] = -axisZ[2];
+//
+//    // translate (-posX, -posY, -posZ)
+//    result->m[3][0] =  axisX[0] * posX + axisX[1] * posY + axisX[2] * posZ;
+//    result->m[3][1] = -axisY[0] * posX - axisY[1] * posY - axisY[2] * posZ;
+//    result->m[3][2] =  axisZ[0] * posX + axisZ[1] * posY + axisZ[2] * posZ;
+//    result->m[3][3] = 1.0f;
+//}
 
 @implementation esTransform
 

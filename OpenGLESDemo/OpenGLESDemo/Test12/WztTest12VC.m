@@ -110,8 +110,8 @@
 }
 - (void)update:(float)deltaTime
 {
-    ESMatrix perspective;
-    ESMatrix modelview;
+    ESMatrix perspective; //透视
+    ESMatrix modelview;   //
     float    aspect;
     
     // Compute a rotation angle based on time to rotate the cube
@@ -126,8 +126,8 @@
     aspect = ( GLfloat ) window_width / ( GLfloat ) window_height;
     
     // Generate a perspective matrix with a 60 degree FOV
-    esMatrixLoadIdentity ( &perspective );
-    esPerspective ( &perspective, 60.0f, aspect, 1.0f, 20.0f );
+    esMatrixLoadIdentity ( &perspective );                     //生成了一个4*4的单位矩阵
+    esPerspective ( &perspective, 60.0f, aspect, 1.0f, 20.0f );//
     
     // Generate a model view matrix to rotate/translate the cube
     esMatrixLoadIdentity ( &modelview );
