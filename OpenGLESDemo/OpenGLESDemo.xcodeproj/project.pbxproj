@@ -59,6 +59,7 @@
 		8ED823F521F9BF7F007B3BD4 /* WztTest4VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F321F9BF7F007B3BD4 /* WztTest4VC.xib */; };
 		8ED823F821F9BFB8007B3BD4 /* shader4.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F621F9BFB8007B3BD4 /* shader4.vsh */; };
 		8ED823F921F9BFB8007B3BD4 /* shader4.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F721F9BFB8007B3BD4 /* shader4.fsh */; };
+		8FCBA920CECB893C38F924A9 /* Pods_OpenGLESDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1576E654D07B72E8F77C5567 /* Pods_OpenGLESDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1576E654D07B72E8F77C5567 /* Pods_OpenGLESDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OpenGLESDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FE3251F09C6C04585C38DBF /* Pods-OpenGLESDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGLESDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OpenGLESDemo/Pods-OpenGLESDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		57C5FB120275E800ADA79ED3 /* Pods-OpenGLESDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OpenGLESDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-OpenGLESDemo/Pods-OpenGLESDemo.release.xcconfig"; sourceTree = "<group>"; };
 		7B82BE022234DBAF0039B1EF /* WztTest10VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest10VC.h; sourceTree = "<group>"; };
 		7B82BE032234DBAF0039B1EF /* WztTest10VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest10VC.m; sourceTree = "<group>"; };
 		7B82BE052234DBD50039B1EF /* WztGLKBaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztGLKBaseVC.h; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 			files = (
 				8E38BB8021F0A62700F5A01F /* GLKit.framework in Frameworks */,
 				8E38BB7E21F0A60800F5A01F /* OpenGLES.framework in Frameworks */,
+				8FCBA920CECB893C38F924A9 /* Pods_OpenGLESDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DC9FAE4714E3C908027804A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FE3251F09C6C04585C38DBF /* Pods-OpenGLESDemo.debug.xcconfig */,
+				57C5FB120275E800ADA79ED3 /* Pods-OpenGLESDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7B82BE012234DB850039B1EF /* Test10 */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +240,7 @@
 				8E38BB6D21F0A58500F5A01F /* OpenGLESDemoUITests */,
 				8E38BB4821F0A58400F5A01F /* Products */,
 				8E38BB7C21F0A60800F5A01F /* Frameworks */,
+				3DC9FAE4714E3C908027804A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +306,7 @@
 			children = (
 				8E38BB7F21F0A62700F5A01F /* GLKit.framework */,
 				8E38BB7D21F0A60800F5A01F /* OpenGLES.framework */,
+				1576E654D07B72E8F77C5567 /* Pods_OpenGLESDemo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -415,9 +431,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E38BB7321F0A58500F5A01F /* Build configuration list for PBXNativeTarget "OpenGLESDemo" */;
 			buildPhases = (
+				5AA1DA40C7491D3880CDA673 /* [CP] Check Pods Manifest.lock */,
 				8E38BB4321F0A58400F5A01F /* Sources */,
 				8E38BB4421F0A58400F5A01F /* Frameworks */,
 				8E38BB4521F0A58400F5A01F /* Resources */,
+				3FAE46138C48F573BD3C2EED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -553,6 +571,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FAE46138C48F573BD3C2EED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-OpenGLESDemo/Pods-OpenGLESDemo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OpenGLESDemo/Pods-OpenGLESDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AA1DA40C7491D3880CDA673 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OpenGLESDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8E38BB4321F0A58400F5A01F /* Sources */ = {
@@ -751,6 +808,7 @@
 		};
 		8E38BB7421F0A58500F5A01F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FE3251F09C6C04585C38DBF /* Pods-OpenGLESDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -769,6 +827,7 @@
 		};
 		8E38BB7521F0A58500F5A01F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C5FB120275E800ADA79ED3 /* Pods-OpenGLESDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
