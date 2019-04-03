@@ -811,7 +811,7 @@
 			baseConfigurationReference = 1FE3251F09C6C04585C38DBF /* Pods-OpenGLESDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RNS9QEVKGH;
 				INFOPLIST_FILE = OpenGLESDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -821,6 +821,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzt.OpenGLESDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = WztiOSDevelop_develop;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -830,7 +831,7 @@
 			baseConfigurationReference = 57C5FB120275E800ADA79ED3 /* Pods-OpenGLESDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = RNS9QEVKGH;
 				INFOPLIST_FILE = OpenGLESDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -840,6 +841,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzt.OpenGLESDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = WztiOSDevelop_develop;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
