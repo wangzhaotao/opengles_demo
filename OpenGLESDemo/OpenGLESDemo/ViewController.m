@@ -119,6 +119,10 @@
     
     dic = @{@"name":@"test12", @"action":@"clickCellAction:", @"vc":@"WztTest12VC"};
     [_dataArray addObject:dic];
+    
+    //
+    dic = @{@"name":@"test13", @"action":@"clickCellAction:", @"vc":@"WztTest13VC"};
+    [_dataArray addObject:dic];
 }
 
 #pragma mark set/get

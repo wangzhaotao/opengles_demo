@@ -22,6 +22,7 @@
 		8E38BB6F21F0A58500F5A01F /* OpenGLESDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E38BB6E21F0A58500F5A01F /* OpenGLESDemoUITests.m */; };
 		8E38BB7E21F0A60800F5A01F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E38BB7D21F0A60800F5A01F /* OpenGLES.framework */; };
 		8E38BB8021F0A62700F5A01F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E38BB7F21F0A62700F5A01F /* GLKit.framework */; };
+		8E43ECE5225B7D4700E08694 /* WztTest13VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E43ECE4225B7D4700E08694 /* WztTest13VC.m */; };
 		8E4B336A21F16FA3009A2005 /* for_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E4B336921F16FA3009A2005 /* for_test.jpg */; };
 		8E83174D21F85FAB00636F11 /* WztTest1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E83174B21F85FAB00636F11 /* WztTest1VC.m */; };
 		8E83174E21F85FAB00636F11 /* WztTest1VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E83174C21F85FAB00636F11 /* WztTest1VC.xib */; };
@@ -111,6 +112,8 @@
 		8E38BB7021F0A58500F5A01F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E38BB7D21F0A60800F5A01F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		8E38BB7F21F0A62700F5A01F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		8E43ECE3225B7D4700E08694 /* WztTest13VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest13VC.h; sourceTree = "<group>"; };
+		8E43ECE4225B7D4700E08694 /* WztTest13VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest13VC.m; sourceTree = "<group>"; };
 		8E4B336921F16FA3009A2005 /* for_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = for_test.jpg; sourceTree = "<group>"; };
 		8E83174A21F85FAB00636F11 /* WztTest1VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest1VC.h; sourceTree = "<group>"; };
 		8E83174B21F85FAB00636F11 /* WztTest1VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest1VC.m; sourceTree = "<group>"; };
@@ -257,6 +260,7 @@
 		8E38BB4921F0A58400F5A01F /* OpenGLESDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8E43ECE2225B7D0B00E08694 /* Test13 */,
 				8ED25576223A4F28003BBA6A /* Test12 */,
 				7B82BE012234DB850039B1EF /* Test10 */,
 				7BADCBBE2233AC90009A0DFC /* Utils */,
@@ -309,6 +313,15 @@
 				1576E654D07B72E8F77C5567 /* Pods_OpenGLESDemo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E43ECE2225B7D0B00E08694 /* Test13 */ = {
+			isa = PBXGroup;
+			children = (
+				8E43ECE3225B7D4700E08694 /* WztTest13VC.h */,
+				8E43ECE4225B7D4700E08694 /* WztTest13VC.m */,
+			);
+			path = Test13;
 			sourceTree = "<group>";
 		};
 		8E83175821F8696B00636F11 /* Test1 */ = {
@@ -620,6 +633,7 @@
 				8ED25582223A647F003BBA6A /* esShapes.m in Sources */,
 				8EA549E421F87670004FC286 /* shader.fsh in Sources */,
 				8EBAFDE822029C92008C8BD3 /* WztTest8View.m in Sources */,
+				8E43ECE5225B7D4700E08694 /* WztTest13VC.m in Sources */,
 				8E38BB4F21F0A58400F5A01F /* ViewController.m in Sources */,
 				7BADCBBD2233ABA2009A0DFC /* WztTest9VC.m in Sources */,
 				7B82BE042234DBAF0039B1EF /* WztTest10VC.m in Sources */,
@@ -811,7 +825,8 @@
 			baseConfigurationReference = 1FE3251F09C6C04585C38DBF /* Pods-OpenGLESDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNS9QEVKGH;
 				INFOPLIST_FILE = OpenGLESDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -821,7 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzt.OpenGLESDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = WztiOSDevelop_develop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -831,7 +846,8 @@
 			baseConfigurationReference = 57C5FB120275E800ADA79ED3 /* Pods-OpenGLESDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RNS9QEVKGH;
 				INFOPLIST_FILE = OpenGLESDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -841,7 +857,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.wzt.OpenGLESDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = WztiOSDevelop_develop;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
