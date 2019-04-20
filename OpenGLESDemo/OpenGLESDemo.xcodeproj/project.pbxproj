@@ -12,6 +12,8 @@
 		7B82BE0A2234E7510039B1EF /* WztTest11VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82BE092234E7510039B1EF /* WztTest11VC.m */; };
 		7BADCBBD2233ABA2009A0DFC /* WztTest9VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BADCBBC2233ABA2009A0DFC /* WztTest9VC.m */; };
 		7BADCBCA2233B5FB009A0DFC /* esShader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BADCBC92233B5FB009A0DFC /* esShader.m */; };
+		8E1331A3226AB414003D310E /* LXHDisplayYUV420.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1331A2226AB414003D310E /* LXHDisplayYUV420.m */; };
+		8E1331A6226AB431003D310E /* LXHDisplayYUV420VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1331A5226AB431003D310E /* LXHDisplayYUV420VC.m */; };
 		8E38BB4C21F0A58400F5A01F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E38BB4B21F0A58400F5A01F /* AppDelegate.m */; };
 		8E38BB4F21F0A58400F5A01F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E38BB4E21F0A58400F5A01F /* ViewController.m */; };
 		8E38BB5221F0A58400F5A01F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E38BB5021F0A58400F5A01F /* Main.storyboard */; };
@@ -94,6 +96,10 @@
 		7BADCBBC2233ABA2009A0DFC /* WztTest9VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest9VC.m; sourceTree = "<group>"; };
 		7BADCBC82233B5FB009A0DFC /* esShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = esShader.h; sourceTree = "<group>"; };
 		7BADCBC92233B5FB009A0DFC /* esShader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = esShader.m; sourceTree = "<group>"; };
+		8E1331A1226AB414003D310E /* LXHDisplayYUV420.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHDisplayYUV420.h; sourceTree = "<group>"; };
+		8E1331A2226AB414003D310E /* LXHDisplayYUV420.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHDisplayYUV420.m; sourceTree = "<group>"; };
+		8E1331A4226AB431003D310E /* LXHDisplayYUV420VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LXHDisplayYUV420VC.h; sourceTree = "<group>"; };
+		8E1331A5226AB431003D310E /* LXHDisplayYUV420VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LXHDisplayYUV420VC.m; sourceTree = "<group>"; };
 		8E38BB4721F0A58400F5A01F /* OpenGLESDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenGLESDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E38BB4A21F0A58400F5A01F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E38BB4B21F0A58400F5A01F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -235,6 +241,17 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		8E1331A0226AB3C9003D310E /* LXHDisplayYUV420 */ = {
+			isa = PBXGroup;
+			children = (
+				8E1331A1226AB414003D310E /* LXHDisplayYUV420.h */,
+				8E1331A2226AB414003D310E /* LXHDisplayYUV420.m */,
+				8E1331A4226AB431003D310E /* LXHDisplayYUV420VC.h */,
+				8E1331A5226AB431003D310E /* LXHDisplayYUV420VC.m */,
+			);
+			path = LXHDisplayYUV420;
+			sourceTree = "<group>";
+		};
 		8E38BB3E21F0A58400F5A01F = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +277,7 @@
 		8E38BB4921F0A58400F5A01F /* OpenGLESDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8E1331A0226AB3C9003D310E /* LXHDisplayYUV420 */,
 				8E43ECE2225B7D0B00E08694 /* Test13 */,
 				8ED25576223A4F28003BBA6A /* Test12 */,
 				7B82BE012234DB850039B1EF /* Test10 */,
@@ -632,6 +650,7 @@
 				7B82BE072234DBD50039B1EF /* WztGLKBaseVC.m in Sources */,
 				8ED25582223A647F003BBA6A /* esShapes.m in Sources */,
 				8EA549E421F87670004FC286 /* shader.fsh in Sources */,
+				8E1331A3226AB414003D310E /* LXHDisplayYUV420.m in Sources */,
 				8EBAFDE822029C92008C8BD3 /* WztTest8View.m in Sources */,
 				8E43ECE5225B7D4700E08694 /* WztTest13VC.m in Sources */,
 				8E38BB4F21F0A58400F5A01F /* ViewController.m in Sources */,
@@ -652,6 +671,7 @@
 				8E8C969B22006107001C4943 /* OpenGLESView.m in Sources */,
 				8EC19C1921FEF2B30018252D /* WztTest5VC.m in Sources */,
 				7B82BE0A2234E7510039B1EF /* WztTest11VC.m in Sources */,
+				8E1331A6226AB431003D310E /* LXHDisplayYUV420VC.m in Sources */,
 				8E8C969E2200806F001C4943 /* LearnView.m in Sources */,
 				8EA549D921F86DC6004FC286 /* WztTest2VC.m in Sources */,
 			);
