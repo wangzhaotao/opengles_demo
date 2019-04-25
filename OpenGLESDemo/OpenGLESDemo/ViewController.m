@@ -123,6 +123,10 @@
     //
     dic = @{@"name":@"test13", @"action":@"clickCellAction:", @"vc":@"WztTest13VC"};
     [_dataArray addObject:dic];
+    
+    //OpenGLES 平滑滤波
+    dic = @{@"name":@"OpenGLES 平滑滤波", @"action":@"clickCellAction:", @"vc":@"WztTest14VC"};
+    [_dataArray addObject:dic];
 }
 
 #pragma mark set/get

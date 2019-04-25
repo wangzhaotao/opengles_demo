@@ -62,6 +62,9 @@
 		8ED823F521F9BF7F007B3BD4 /* WztTest4VC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F321F9BF7F007B3BD4 /* WztTest4VC.xib */; };
 		8ED823F821F9BFB8007B3BD4 /* shader4.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F621F9BFB8007B3BD4 /* shader4.vsh */; };
 		8ED823F921F9BFB8007B3BD4 /* shader4.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 8ED823F721F9BFB8007B3BD4 /* shader4.fsh */; };
+		8EE0C3E72271868600B594E0 /* WztTest14VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0C3E62271868600B594E0 /* WztTest14VC.m */; };
+		8EE0C3EE22718B0800B594E0 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0C3ED22718B0800B594E0 /* Utils.m */; };
+		8EE0C3F122718CE300B594E0 /* UIImage+ToolExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE0C3F022718CE300B594E0 /* UIImage+ToolExt.m */; };
 		8FCBA920CECB893C38F924A9 /* Pods_OpenGLESDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1576E654D07B72E8F77C5567 /* Pods_OpenGLESDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,6 +174,12 @@
 		8ED823F321F9BF7F007B3BD4 /* WztTest4VC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WztTest4VC.xib; sourceTree = "<group>"; };
 		8ED823F621F9BFB8007B3BD4 /* shader4.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader4.vsh; sourceTree = "<group>"; };
 		8ED823F721F9BFB8007B3BD4 /* shader4.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader4.fsh; sourceTree = "<group>"; };
+		8EE0C3E52271868600B594E0 /* WztTest14VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WztTest14VC.h; sourceTree = "<group>"; };
+		8EE0C3E62271868600B594E0 /* WztTest14VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WztTest14VC.m; sourceTree = "<group>"; };
+		8EE0C3EC22718B0800B594E0 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		8EE0C3ED22718B0800B594E0 /* Utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		8EE0C3EF22718CE300B594E0 /* UIImage+ToolExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+ToolExt.h"; sourceTree = "<group>"; };
+		8EE0C3F022718CE300B594E0 /* UIImage+ToolExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ToolExt.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,8 +222,6 @@
 		7B82BE012234DB850039B1EF /* Test10 */ = {
 			isa = PBXGroup;
 			children = (
-				7B82BE052234DBD50039B1EF /* WztGLKBaseVC.h */,
-				7B82BE062234DBD50039B1EF /* WztGLKBaseVC.m */,
 				7B82BE022234DBAF0039B1EF /* WztTest10VC.h */,
 				7B82BE032234DBAF0039B1EF /* WztTest10VC.m */,
 				7B82BE082234E7510039B1EF /* WztTest11VC.h */,
@@ -235,8 +242,10 @@
 		7BADCBBE2233AC90009A0DFC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7BADCBC82233B5FB009A0DFC /* esShader.h */,
-				7BADCBC92233B5FB009A0DFC /* esShader.m */,
+				8EE0C3EC22718B0800B594E0 /* Utils.h */,
+				8EE0C3ED22718B0800B594E0 /* Utils.m */,
+				8EE0C3EF22718CE300B594E0 /* UIImage+ToolExt.h */,
+				8EE0C3F022718CE300B594E0 /* UIImage+ToolExt.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -277,11 +286,13 @@
 		8E38BB4921F0A58400F5A01F /* OpenGLESDemo */ = {
 			isa = PBXGroup;
 			children = (
+				8EE0C3EB22718ACA00B594E0 /* OpenGLESUtils */,
+				7BADCBBE2233AC90009A0DFC /* Utils */,
+				8EE0C3E42271866E00B594E0 /* Test14 */,
 				8E1331A0226AB3C9003D310E /* LXHDisplayYUV420 */,
 				8E43ECE2225B7D0B00E08694 /* Test13 */,
 				8ED25576223A4F28003BBA6A /* Test12 */,
 				7B82BE012234DB850039B1EF /* Test10 */,
-				7BADCBBE2233AC90009A0DFC /* Utils */,
 				7BADCBBA2233AB77009A0DFC /* Test9 */,
 				8EBAFDDC22029A92008C8BD3 /* Test8 */,
 				8EA429302201ACD20063E3B1 /* Test7 */,
@@ -433,10 +444,6 @@
 		8ED25576223A4F28003BBA6A /* Test12 */ = {
 			isa = PBXGroup;
 			children = (
-				8ED25577223A4F92003BBA6A /* esTransform.h */,
-				8ED25578223A4F92003BBA6A /* esTransform.m */,
-				8ED25580223A647F003BBA6A /* esShapes.h */,
-				8ED25581223A647F003BBA6A /* esShapes.m */,
 				8ED2557D223A51C1003BBA6A /* WztTest12VC.h */,
 				8ED2557E223A51C1003BBA6A /* WztTest12VC.m */,
 			);
@@ -453,6 +460,30 @@
 				8ED823F621F9BFB8007B3BD4 /* shader4.vsh */,
 			);
 			path = Test4;
+			sourceTree = "<group>";
+		};
+		8EE0C3E42271866E00B594E0 /* Test14 */ = {
+			isa = PBXGroup;
+			children = (
+				8EE0C3E52271868600B594E0 /* WztTest14VC.h */,
+				8EE0C3E62271868600B594E0 /* WztTest14VC.m */,
+			);
+			path = Test14;
+			sourceTree = "<group>";
+		};
+		8EE0C3EB22718ACA00B594E0 /* OpenGLESUtils */ = {
+			isa = PBXGroup;
+			children = (
+				7B82BE052234DBD50039B1EF /* WztGLKBaseVC.h */,
+				7B82BE062234DBD50039B1EF /* WztGLKBaseVC.m */,
+				7BADCBC82233B5FB009A0DFC /* esShader.h */,
+				7BADCBC92233B5FB009A0DFC /* esShader.m */,
+				8ED25577223A4F92003BBA6A /* esTransform.h */,
+				8ED25578223A4F92003BBA6A /* esTransform.m */,
+				8ED25580223A647F003BBA6A /* esShapes.h */,
+				8ED25581223A647F003BBA6A /* esShapes.m */,
+			);
+			path = OpenGLESUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -660,8 +691,11 @@
 				8EA549E221F8762D004FC286 /* shader.vsh in Sources */,
 				8E38BB5A21F0A58500F5A01F /* main.m in Sources */,
 				7BADCBCA2233B5FB009A0DFC /* esShader.m in Sources */,
+				8EE0C3F122718CE300B594E0 /* UIImage+ToolExt.m in Sources */,
 				8ED2557F223A51C1003BBA6A /* WztTest12VC.m in Sources */,
+				8EE0C3EE22718B0800B594E0 /* Utils.m in Sources */,
 				8EA549DE21F8759A004FC286 /* WztTest3VC.m in Sources */,
+				8EE0C3E72271868600B594E0 /* WztTest14VC.m in Sources */,
 				8ED823F421F9BF7F007B3BD4 /* WztTest4VC.m in Sources */,
 				8E83174D21F85FAB00636F11 /* WztTest1VC.m in Sources */,
 				8EBAFDE422029B03008C8BD3 /* WztTest8VC.m in Sources */,

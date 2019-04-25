@@ -87,16 +87,7 @@
     [self jiegouArray:&vertexPos];
     
     //method2
-    
-    
-    
-    //
-    glEnableVertexAttribArray ( 0 );
-    //glVertexAttrib4fv ( 1, color );
-    
-    glDrawArrays ( GL_TRIANGLES, 0, 3 );
-    
-    glDisableVertexAttribArray ( 0 );
+    [self shuzuJieGou];
 }
 
 /**
@@ -123,7 +114,7 @@
 -(void)jiegouArray:(GLfloat *)vertexPos {
     
     int vertex_pos_size = 3;
-    int vertex_normal_size=0;
+    int vertex_normal_size=4;
     int vertex_texcord0_size=0;
     
     int vertex_pos_index=0;
@@ -138,15 +129,57 @@
     
     float *p=vertexPos;//(float*)malloc(3*vertex_attrib_size*sizeof(float));
     
-    glVertexAttribPointer(vertex_pos_index, vertex_pos_size, GL_FLOAT, GL_FALSE, vertex_attrib_size*sizeof(float), p);
+    GLfloat color[4] = { 1.0f, 0.5f, 0.1f, 1.0f,
+      1.0f, 0.5f, 0.1f, 1.0f,
+        1.0f, 0.5f, 0.1f, 1.0f,
+    };
+    float *colorP = color;
     
-    glVertexAttribPointer(vertex_normal_index, vertex_normal_size, GL_FLOAT, GL_FALSE, vertex_attrib_size*sizeof(float), p+vertex_normal_offset);
+    glVertexAttribPointer(vertex_pos_index, vertex_pos_size, GL_FLOAT, GL_FALSE, vertex_pos_size*sizeof(float), p);
     
-    glVertexAttribPointer(vertex_texcord0_index, vertex_pos_size, GL_FLOAT, GL_FALSE, vertex_attrib_size*sizeof(float), p+vertex_texcord0_offset);
+    glVertexAttribPointer(vertex_normal_index, vertex_normal_size, GL_FLOAT, GL_FALSE, vertex_normal_size*sizeof(float), colorP);
+    
+    glVertexAttribPointer(vertex_texcord0_index, vertex_texcord0_size, GL_FLOAT, GL_FALSE, vertex_texcord0_size*sizeof(float), p+vertex_texcord0_offset);
+    
+    glEnableVertexAttribArray ( 0 );
+    glEnableVertexAttribArray ( 1 );
+    //glVertexAttrib4fv ( 1, color );
+    
+    glDrawArrays ( GL_TRIANGLES, 0, 3 );
+    
+    glDisableVertexAttribArray ( 0 );
+    glDisableVertexAttribArray ( 1 );
 }
 //*** 数组结构 ***
 -(void)shuzuJieGou {
     
+    GLfloat color[4] = { 1.0f, 0.5f, 0.1f, 1.0f };
+    // 3 vertices, with (x,y,z) per-vertex
+    GLfloat vertexPos[3 * 3] =
+    {
+        0.0f,  0.5f, 0.0f, // v0
+        -1.0f, -0.5f, 0.0f, // v1
+        1.0f, -0.5f, 0.0f  // v2
+    };
+    
+    int vertex_pos_size = 3;
+    
+    int vertex_pos_index=0;
+    int vertex_normal_index=1;
+    
+    int vertex_pos_offset=0;
+    
+    
+    float *p=vertexPos;//(float*)malloc(3*vertex_attrib_size*sizeof(float));
+    
+    glVertexAttribPointer(vertex_pos_index, vertex_pos_size, GL_FLOAT, GL_FALSE, vertex_pos_size*sizeof(float), p);
+    
+    glEnableVertexAttribArray ( vertex_pos_index );
+    glVertexAttrib4fv ( vertex_normal_index, color );
+    
+    glDrawArrays ( GL_TRIANGLES, 0, 3 );
+    
+    glDisableVertexAttribArray ( 0 );
 }
 
 
