@@ -39,7 +39,6 @@ static GLfloat const angle_offset = 0.1;
 #pragma mark private methods
 -(void)openglesInit {
     
-    //#version 300 es           //\
     
     NSString *vShaderStr =
     @"uniform mat4 uMVPMatrix;    \
@@ -52,7 +51,6 @@ static GLfloat const angle_offset = 0.1;
         vTextureCoord = aTexCoor; \
     }";
     
-    //#version 300 es                                                   //\
     
     NSString *fShaderStr =
     @"precision mediump float;                                          \
@@ -89,6 +87,7 @@ static GLfloat const angle_offset = 0.1;
         gl_FragColor=sum*scaleFactor;             \
     }" ;
     
+    //1.加载着色器 创建程序
     // Create the program object
     const char *vertex_shader_string = [vShaderStr UTF8String];
     const char *fragment_shader_string = [fShaderStr UTF8String];
@@ -102,6 +101,8 @@ static GLfloat const angle_offset = 0.1;
     //可以设置背景色
     glClearColor(0.3f, 0.6f, 1.0f, 1.0f);
     
+    
+    //2.获取属性id
     //获取程序中顶点位置属性引用
     maPositionHandle = glGetAttribLocation(programObject, "aPosition");
     //获取程序中总变换矩阵id
@@ -109,6 +110,8 @@ static GLfloat const angle_offset = 0.1;
     //获取程序中顶点纹理坐标属性引用
     maTexCoorHandle= glGetAttribLocation(programObject, "aTexCoor");
     
+    
+    //3.初始化纹理
     //传递被按下的图片id
     if (texId) {
         glDeleteTextures(1, &texId);
@@ -173,7 +176,7 @@ static GLfloat const angle_offset = 0.1;
     glUseProgram(programObject);
     
     
-    //矩阵
+    //4.矩阵
     ESMatrix currMatrix, mVMatrix, mProjMatrix;
     esMatrixLoadIdentity ( &currMatrix );
     esMatrixLoadIdentity ( &mVMatrix );
@@ -189,21 +192,21 @@ static GLfloat const angle_offset = 0.1;
     //将最终变换矩阵传入着色器程序
     glUniformMatrix4fv(muMVPMatrixHandle, 1, 0, &mMVPMatrix.m[0][0]);
     
+    
+    //5.
     //将顶点纹理坐标数据传入渲染管线
-    float tEnd=1.0, sEnd=1.0;
+    float tEnd=1.0f, sEnd=1.0f;
     float vertexVertices[]= //纹理坐标
     {
-        0,0, 0,tEnd, sEnd,0,
-        0,tEnd, sEnd,tEnd, sEnd,0
+        0,    0,    0,
+        tEnd, sEnd, 0,
+        0,    tEnd, sEnd,
+        tEnd, sEnd, 0
     };
     glVertexAttribPointer(maTexCoorHandle, 2, GL_FLOAT, 0, 0, vertexVertices);
     
-    //启用顶点位置数据
-    glEnableVertexAttribArray(maPositionHandle);
-    glEnableVertexAttribArray(maTexCoorHandle);
     
-    
-    //绑定纹理
+    //6.绑定纹理
     glActiveTexture(GL_TEXTURE0);
     
 //    //传递被按下的图片id
@@ -212,21 +215,30 @@ static GLfloat const angle_offset = 0.1;
 //    glBindTexture(GL_TEXTURE_2D, texId);
     
     //将顶点法向量传入渲染管线
+    /*
+     A  |  C
+     ---+---
+     B  |  D
+     */
+    GLfloat x = 0.5f, y=0.5f, z=0.0f;
     float mVertexBuffer[]=
     {
-        -0.5f, 0.5f, 0,
-        -0.5f, -0.5f, 0,
-        0.5f, 0.5f, 0,
-        
-        -0.5f, -0.5f, 0,
-        0.5f, -0.5f, 0,
-        0.5f, 0.5f, 0,
+        -x,  y,  z,  //A
+        -x, -y,  z,  //B
+         x,  y,  z,  //C
+
+        -x, -y,  z,  //B
+         x, -y,  z,  //D
+         x,  y,  z,  //C
     };
     glVertexAttribPointer(maPositionHandle, 3, GL_FLOAT, 0, 0, mVertexBuffer);
     
+    //7.启用顶点位置数据
+    glEnableVertexAttribArray(maPositionHandle);
+    glEnableVertexAttribArray(maTexCoorHandle);
     
     
-    //绘制
+    //8.绘制
     int vCount = 6;
     glDrawArrays(GL_TRIANGLES, 0, vCount);
     
@@ -251,7 +263,7 @@ static GLfloat const angle_offset = 0.1;
     
     
     //自定义代码
-    //angle_varing += angle_offset;
+    angle_varing += angle_offset;
     [self drawGL:angle_varing];
 }
 
